@@ -7,7 +7,7 @@ public class PasswordCheck
     static int number = 0;
     static int special = 0;
     static int capital = 0;
-    static int doubleLetter = 0;
+    static int tripleLetter = 0;
 
     public static void hasVowel(String pwd)
     {
@@ -42,7 +42,7 @@ public class PasswordCheck
         length = 0;
         if (pwd.length() > 10)
         {
-            length++;
+            length = pwd.length();
         }
     }
 
@@ -55,7 +55,7 @@ public class PasswordCheck
             c = pwd.charAt(i);
             switch (c)
             {
-                case '~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=',
+                case '~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', ' ',
                         '+', '{', '[', ']', '}', '|', ':', ';', '"', ',', '.', '/', '<', '>', '?' -> special++;
             }
         }
@@ -80,7 +80,7 @@ public class PasswordCheck
         char c;
         char c2;
         char c3;
-        doubleLetter = 0;
+        tripleLetter = 0;
         for (int i = 0; i < pwd.length()-2; i++)
         {
             int j = i+1;
@@ -95,13 +95,13 @@ public class PasswordCheck
 
             if (char1.equals(char2) && char2.equals(char3))
             {
-                doubleLetter++;
+                tripleLetter++;
             }
         }
     }
 
     public static boolean isValid()
     {
-        return vowel > 0 && number > 0 && length > 0 && special > 0 && capital > 0 && doubleLetter == 0;
+        return vowel > 0 && number > 0 && length > 0 && special > 0 && capital > 0 && tripleLetter == 0;
     }
 }

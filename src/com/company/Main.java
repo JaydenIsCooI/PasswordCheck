@@ -13,22 +13,23 @@ public class Main {
         String line = "------------------------------";
 
         hasVowel(pwd);
+        hasNumber(pwd);
         length(pwd);
         special(pwd);
         capital(pwd);
         doubleLetter(pwd);
 
-        System.out.println(line + "\nVowels: " + vowel + "\nNumbers: " + number +  "\nLength: " + length + "\nSpecial Characters: " + special + "\nCapital Letters: " + capital + "\nTripple Letters: " + doubleLetter);
+        System.out.println(line + "\nVowels: " + vowel + "\nNumbers: " + number +  "\nLength: " + length + "\nSpecial Characters: " + special + "\nCapital Letters: " + capital + "\nTriple Letters: " + tripleLetter);
 
         if (isValid())
         {
             System.out.println(line);
-            System.out.println("Your Password is Valid");
+            System.out.println("Your Password is Secure!");
             System.out.println(line);
         } else
         {
             System.out.println(line);
-            System.out.println("Your Password is Invalid");
+            System.out.println("Your Password is NOT Secure!");
             System.out.println(line);
         }
     }
